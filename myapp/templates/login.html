@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans "Login" %} | SEMARTEC{% endblock %}
+
+{% block content %}
+<div class="container my-5 section-title1">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-5">
+      <div class="card shadow-sm">
+        <div class="card-body p-5">
+          <div class="text-center mb-4">
+            <i class="fa-solid fa-lock fa-3x text-primary mb-3"></i>
+            <h4 class="card-title">{% trans "Acceso de Administrador" %}</h4>
+            <small class="text-muted">{% trans "Ingresa tus credenciales" %}</small>
+          </div>
+
+          {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} mb-3">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+
+          <form method="post" novalidate>
+            {% csrf_token %}
+
+            <div class="mb-3">
+              <label for="username" class="form-label">{% trans "Usuario" %}</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="username" 
+                name="username" 
+                placeholder="{% trans "Ingresa tu usuario" %}"
+                required
+              >
+            </div>
+
+            <div class="mb-4">
+              <label for="password" class="form-label">{% trans "Contraseña" %}</label>
+              <input 
+                type="password" 
+                class="form-control" 
+                id="password" 
+                name="password" 
+                placeholder="{% trans "Ingresa tu contraseña" %}"
+                required
+              >
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 mb-3">
+              <i class="fa-solid fa-right-to-bracket"></i> {% trans "Iniciar Sesión" %}
+            </button>
+
+            <a href="{% url 'inicio' %}" class="btn btn-outline-secondary w-100">
+              <i class="fa-solid fa-arrow-left"></i> {% trans "Volver al inicio" %}
+            </a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

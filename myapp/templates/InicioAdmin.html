@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %} 
+
+{% block title %}
+{% trans "Administrador" %} | SEMARTEC
+{% endblock %} 
+
+{% block content %}
+<div class="container my-5 section-title1">
+  <div class="text-center mb-5">
+    <h1 class="fw-bold">{% trans "Bienvenido al Panel de Administración" %}</h1>
+    <p class="text-muted">
+      {% trans "Gestiona avisos, noticias y colaboradores de SEMARTEC." %}
+    </p>
+  </div>
+
+  <div class="row g-4">
+    <!-- Avisos -->
+    <div class="col-md-6 col-lg-3">
+      <div class="card text-center shadow-sm h-100">
+        <div class="card-body d-flex flex-column">
+          <i class="fa-solid fa-bullhorn fa-3x text-primary mb-3"></i>
+          <h5 class="card-title">{% trans "Gestión de Avisos" %}</h5>
+          <p class="card-text flex-grow-1">
+            {% trans "Crea, edita y elimina avisos para mantener informada a la comunidad." %}
+          </p>
+          <a href="{% url 'admin-avisos' %}" class="btn btn-primary mt-auto">
+            <i class="fa-solid fa-arrow-right"></i> {% trans "Ir a Avisos" %}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Noticias -->
+    <div class="col-md-6 col-lg-3">
+      <div class="card text-center shadow-sm h-100">
+        <div class="card-body d-flex flex-column">
+          <i class="fa-solid fa-newspaper fa-3x text-success mb-3"></i>
+          <h5 class="card-title">{% trans "Gestión de Noticias" %}</h5>
+          <p class="card-text flex-grow-1">
+            {% trans "Publica y gestiona noticias importantes." %}
+          </p>
+          <a href="{% url 'admin-noticias' %}" class="btn btn-success mt-auto">
+            <i class="fa-solid fa-arrow-right"></i> {% trans "Ir a Noticias" %}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Colaboradores -->
+    <div class="col-md-6 col-lg-3">
+      <div class="card text-center shadow-sm h-100">
+        <div class="card-body d-flex flex-column">
+          <i class="fa-solid fa-users fa-3x text-info mb-3"></i>
+          <h5 class="card-title">{% trans "Gestión de Colaboradores" %}</h5>
+          <p class="card-text flex-grow-1">
+            {% trans "Administra el equipo de colaboradores de SEMARTEC." %}
+          </p>
+          <a
+            href="{% url 'admin-colaboradores' %}"
+            class="btn btn-info mt-auto"
+          >
+            <i class="fa-solid fa-arrow-right"></i> {% trans "Ir a Colaboradores" %}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contactos -->
+    <div class="col-md-6 col-lg-3">
+      <div class="card text-center shadow-sm h-100">
+        <div class="card-body d-flex flex-column">
+          <i class="fa-solid fa-envelope fa-3x text-warning mb-3"></i>
+          <h5 class="card-title">{% trans "Gestión de Contactos" %}</h5>
+          <p class="card-text flex-grow-1">
+            {% trans "Revisa y responde mensajes de contacto." %}
+          </p>
+          <a href="{% url 'admin-contactos' %}" class="btn btn-warning mt-auto">
+            <i class="fa-solid fa-arrow-right"></i> {% trans "Ir a Contactos" %}
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mb-5">
+      <h1 class="fw-bold">{% trans "Para la difusión de la empresa:" %}</h1>
+      <p class="text-muted">
+        {% blocktrans %}Generar un boletín informativo acerca de los avisos, noticias, <br /> colaboradores en PDF.{% endblocktrans %}
+      </p>
+      <a href="{% url 'generar-pdf' %}" class="btn btn-outline-danger btn-sm mt-3">
+        <i class="fa-solid fa-sign-out-alt"></i> {% trans "Generar boletín informativo" %}
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}

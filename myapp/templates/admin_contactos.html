@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Gestión de Contactos" %} | SEMARTEC{% endblock %}
+
+{% block content %}
+<div class="container my-5 section-title1">
+  <div class="d-flex justify-content-between align-items-center mb-5">
+    <div>
+      <h1 class="fw-bold mb-2">{% trans "Gestión de Contactos" %}</h1>
+      <p class="text-muted">{% blocktrans %}Total de contactos: {{ total_contactos }}{% endblocktrans %}</p>
+    </div>
+  </div>
+
+  <!-- Alerta de limpieza automática -->
+  {% if contactos_por_eliminar > 0 %}
+  <div class="alert alert-warning alert-dismissible fade show mb-4" role="alert">
+    <i class="fa-solid fa-trash-can"></i> <strong>{% trans "Limpieza automática disponible:" %}</strong>
+    <br>
+    {% blocktrans %}Hay <strong>{{ contactos_por_eliminar }}</strong> registro(s) de contacto más antiguo(s) de 30 días que serán eliminados automáticamente.{% endblocktrans %}
+    <br>
+    <small>{% blocktrans %}Última fecha a eliminar: {{ fecha_limite|date:"d/m/Y H:i" }}{% endblocktrans %}</small>
+    <hr>
+    <a href="{% url 'limpiar-contactos' %}" class="btn btn-sm btn-warning" onclick="return confirm('{% trans "¿Deseas eliminar los registros de contactos más antiguos de 30 días?" %}');">
+      <i class="fa-solid fa-broom"></i> {% trans "Limpiar ahora" %}
+    </a>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="{% trans "Cerrar" %}"></button>
+  </div>
+  {% endif %}
+
+  <!-- Botón crear -->
+  <div class="row g-3 mb-5">
+    <div class="col-md-6">
+      <a href="{% url 'generar-contactos-pdf' %}" class="btn btn-success w-100 py-3" target="_blank">
+        <i class="fa-solid fa-file-pdf"></i> {% trans "Generar relación de contactos (PDF)" %}
+      </a>
+    </div>
+    <div class="col-md-6">
+      <a href="{% url 'inicio-admin' %}" class="btn btn-outline-primary w-100 py-3">
+        <i class="fa-solid fa-arrow-left"></i> {% trans "Volver al Panel" %}
+      </a>
+    </div>
+  </div>
+
+  <!-- Tabla de contactos -->
+  <div class="card">
+    <div class="card-header bg-info text-white d-flex justify-content-between align-items-center">
+      <h5 class="mb-0">
+        <i class="fa-solid fa-list"></i> {% trans "Todos los Contactos" %}
+      </h5>
+      <span class="badge bg-light text-info badge-theme" data-dark="bg-dark text-light" data-light="bg-light text-info">{{ contactos|length }}</span>
+    </div>
+    <div class="card-body p-0">
+      {% if contactos %}
+      <div class="table-responsive">
+        <table class="table table-hover mb-0" id="tablaContactos">
+          <thead>
+            <tr>
+              <th>{% trans "Nombre" %}</th>
+              <th>{% trans "Número" %}</th>
+              <th>{% trans "Email" %}</th>
+              <th>{% trans "Mensaje" %}</th>
+              <th>{% trans "Fecha de Envío" %}</th>
+              <th>{% trans "Acciones" %}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for c in contactos %}
+            <tr>
+              <td>{{ c.nombre }}</td>
+              <td>{{ c.numero }}</td>
+              <td>{{ c.email }}</td>
+              <td>{{ c.mensaje|truncatechars:50 }}</td>
+              <td>
+                <small class="text-muted">{{ c.fecha_envio|date:"d/m/Y H:i" }}</small>
+              </td>
+              <td>
+                <a href="{% url 'contactos-detalle' c.pk %}" class="btn btn-sm btn-info" title="{% trans "Ver detalles" %}">
+                  <i class="fa-solid fa-eye"></i>
+                </a>
+                <a href="{% url 'contactos-eliminar' c.pk %}" class="btn btn-sm btn-danger">
+                  <i class="fa-solid fa-trash"></i>
+                </a>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% else %}
+      <div class="alert alert-info m-0">
+        <i class="fa-solid fa-info-circle"></i> {% trans "No hay contactos registrados aún." %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+</div>
+{% endblock %}

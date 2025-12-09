@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Eliminar contacto" %} | SEMARTEC{% endblock %}
+
+{% block content %}
+<div class="container my-5 section-title1">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-6">
+      <div class="card shadow-sm border-danger">
+        <div class="card-body text-center">
+          <i class="fa-solid fa-exclamation-triangle fa-3x text-danger mb-3"></i>
+          <h4 class="card-title mb-3">{% trans "¿Eliminar contacto?" %}</h4>
+          <p class="text-muted mb-4">
+            {% blocktrans with nombre=object.nombre %}¿Estás seguro de que deseas eliminar al contacto <strong>"{{ nombre }}"</strong>? Esta acción no se puede deshacer.{% endblocktrans %}
+          </p>
+
+          <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger me-2">
+              <i class="fa-solid fa-trash"></i> {% trans "Sí, eliminar" %}
+            </button>
+            <a href="{% url 'admin-contactos' %}" class="btn btn-outline-secondary">
+              <i class="fa-solid fa-times"></i> {% trans "Cancelar" %}
+            </a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

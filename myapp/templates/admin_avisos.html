@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Gestión de Avisos" %}| SEMARTEC{% endblock %}
+
+{% block content %}
+<div class="container my-5 section-title1">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="fw-bold">{% trans "Gestión de avisos" %}</h2>
+  </div>
+
+    <!-- Botón crear -->
+  <div class="row g-3 mb-5">
+    <div class="col-md-6">
+      <a href="{% url 'aviso-crear' %}" class="btn btn-primary w-100 py-3">
+        <i class="fa-solid fa-plus"></i> {% trans "Crear Aviso" %}
+      </a>
+    </div>
+    <div class="col-md-6">
+      <a href="{% url 'inicio-admin' %}" class="btn btn-outline-primary w-100 py-3">
+        <i class="fa-solid fa-arrow-left"></i> {% trans "Volver al Panel" %}
+      </a>
+    </div>
+  </div>
+
+  <!-- Tabla de avisos -->
+  <div class="card shadow-sm">
+    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+      <h5 class="mb-0">{% trans "Gestión de Avisos" %}</h5>
+      <span class="badge bg-light text-primary badge-theme" data-dark="bg-dark text-light" data-light="bg-light text-primary">{{ avisos|length }}</span>
+    </div>
+    <div class="card-body p-0">
+      {% if avisos %}
+      <div class="table-responsive">
+        <table class="table table-hover mb-0" id="tablaAvisos">
+          <thead>
+            <tr>
+              <th>{% trans "Título" %}</th>
+              <th>{% trans "Descripción" %}</th>
+              <th>{% trans "Fecha" %}</th>
+              <th>{% trans "Acciones" %}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for a in avisos %}
+            <tr>
+              <td><strong>{{ a.titulo }}</strong></td>
+              <td>{{ a.descripcion|truncatechars:80 }}</td>
+              <td>{{ a.fecha_publicacion|date:"d/m/Y H:i" }}</td>
+              <td>
+                <a href="{% url 'aviso-editar' a.pk %}" class="btn btn-sm btn-warning">
+                  <i class="fa-solid fa-edit"></i>
+                </a>
+                <a href="{% url 'aviso-eliminar' a.pk %}" class="btn btn-sm btn-danger">
+                  <i class="fa-solid fa-trash"></i>
+                </a>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% else %}
+      <div class="alert alert-info m-0">
+        <i class="fa-solid fa-info-circle"></i> {% trans "No hay avisos registrados aún." %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+</div>
+{% endblock %}

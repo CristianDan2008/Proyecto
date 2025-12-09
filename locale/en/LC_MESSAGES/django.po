@@ -1,0 +1,757 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-05 10:08-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\myapp\templates\InicioAdmin.html:6
+msgid "Administrador"
+msgstr "Administrator"
+
+#: .\myapp\templates\InicioAdmin.html:12
+msgid "Bienvenido al Panel de Administración"
+msgstr "Welcome to the Administration Panel"
+
+#: .\myapp\templates\InicioAdmin.html:14
+msgid "Gestiona avisos, noticias y colaboradores de SEMARTEC."
+msgstr "Manage announcements, news and collaborators of SEMARTEC."
+
+#: .\myapp\templates\InicioAdmin.html:24 .\myapp\templates\admin_avisos.html:5
+#: .\myapp\templates\admin_avisos.html:30
+msgid "Gestión de Avisos"
+msgstr "Announcements Management"
+
+#: .\myapp\templates\InicioAdmin.html:26
+msgid "Crea, edita y elimina avisos para mantener informada a la comunidad."
+msgstr "Create, edit and delete announcements to keep the community informed."
+
+#: .\myapp\templates\InicioAdmin.html:29
+msgid "Ir a Avisos"
+msgstr "Go to Announcements"
+
+#: .\myapp\templates\InicioAdmin.html:40
+#: .\myapp\templates\admin_noticias.html:4
+#: .\myapp\templates\admin_noticias.html:8
+msgid "Gestión de Noticias"
+msgstr "News Management"
+
+#: .\myapp\templates\InicioAdmin.html:42
+msgid "Publica y gestiona noticias importantes."
+msgstr "Publish and manage important news."
+
+#: .\myapp\templates\InicioAdmin.html:45
+msgid "Ir a Noticias"
+msgstr "Go to News"
+
+#: .\myapp\templates\InicioAdmin.html:56
+#: .\myapp\templates\admin_colaboradores.html:4
+#: .\myapp\templates\admin_colaboradores.html:10
+msgid "Gestión de Colaboradores"
+msgstr "Collaborators Management"
+
+#: .\myapp\templates\InicioAdmin.html:58
+msgid "Administra el equipo de colaboradores de SEMARTEC."
+msgstr "Manage the SEMARTEC collaborators team."
+
+#: .\myapp\templates\InicioAdmin.html:64s
+msgid "Ir a Colaboradores"
+msgstr "Go to Collaborators"
+
+#: .\myapp\templates\InicioAdmin.html:75
+#: .\myapp\templates\admin_contactos.html:4
+#: .\myapp\templates\admin_contactos.html:10
+msgid "Gestión de Contactos"
+msgstr "Contacts Management"
+
+#: .\myapp\templates\InicioAdmin.html:77
+msgid "Revisa y responde mensajes de contacto."
+msgstr "Review and respond to contact messages."
+
+#: .\myapp\templates\InicioAdmin.html:80
+msgid "Ir a Contactos"
+msgstr "Go to Contacts"
+
+#: .\myapp\templates\InicioAdmin.html:86
+msgid "Para la difusión de la empresa:"
+msgstr "For company dissemination:"
+
+#: .\myapp\templates\admin_colaboradores.html:11
+#, python-format
+msgid "Total de colaboradores: %(total_colaboradores)s"
+msgstr "Total collaborators: %(total_colaboradores)s"
+
+#: .\myapp\templates\admin_colaboradores.html:14
+msgid "Cerrar Sesión"
+msgstr "Logout"
+
+#: .\myapp\templates\admin_colaboradores.html:22
+msgid "Crear Nuevo Colaborador"
+msgstr "Create New Collaborator"
+
+#: .\myapp\templates\admin_colaboradores.html:36
+msgid "Todos los Colaboradores"
+msgstr "All Collaborators"
+
+#: .\myapp\templates\admin_colaboradores.html:46
+msgid "Foto"
+msgstr "Photo"
+
+#: .\myapp\templates\admin_colaboradores.html:47
+#: .\myapp\templates\admin_contactos.html:59
+#: .\myapp\templates\colaboradores_form.html:32
+#: .\myapp\templates\contactos_detail.html:24
+#: .\myapp\templates\contactos_form.html:27
+msgid "Nombre"
+msgstr "Name"
+
+#: .\myapp\templates\admin_colaboradores.html:48
+msgid "Cargo/Descripción"
+msgstr "Position/Description"
+
+#: .\myapp\templates\admin_colaboradores.html:83
+msgid "No hay colaboradores registrados aún."
+msgstr "No collaborators registered yet."
+
+#: .\myapp\templates\admin_contactos.html:11
+#, python-format
+msgid "Total de contactos: %(total_contactos)s"
+msgstr "Total contacts: %(total_contactos)s"
+
+#: .\myapp\templates\admin_contactos.html:18
+msgid "Limpieza automática disponible:"
+msgstr "Automatic cleanup available:"
+
+#: .\myapp\templates\admin_contactos.html:20
+#, python-format
+msgid ""
+"Hay <strong>%(contactos_por_eliminar)s</strong> registro(s) de contacto más "
+"antiguo(s) de 30 días que serán eliminados automáticamente."
+msgstr ""
+"There are <strong>%(contactos_por_eliminar)s</strong> contact record(s) older "
+"than 30 days that will be automatically deleted."
+
+#: .\myapp\templates\admin_contactos.html:22
+#, python-format
+msgid "Última fecha a eliminar: %(fecha_limite|date:\"d/m/Y H:i\")s"
+msgstr "Last date to delete: %(fecha_limite|date:\"d/m/Y H:i\")s"
+
+#: .\myapp\templates\admin_contactos.html:24
+msgid "¿Deseas eliminar los registros de contactos más antiguos de 30 días?"
+msgstr "Do you want to delete contact records older than 30 days?"
+
+#: .\myapp\templates\admin_contactos.html:25
+msgid "Limpiar ahora"
+msgstr "Clean Now"
+
+#: .\myapp\templates\admin_contactos.html:27
+msgid "Cerrar"
+msgstr "Close"
+
+#: .\myapp\templates\admin_contactos.html:35
+msgid "Generar relación de contactos (PDF)"
+msgstr "Generate Contact Report (PDF)"
+
+#: .\myapp\templates\admin_contactos.html:49
+msgid "Todos los Contactos"
+msgstr "All Contacts"
+
+#: .\myapp\templates\admin_contactos.html:60
+msgid "Número"
+msgstr "Number"
+
+#: .\myapp\templates\admin_contactos.html:61
+#: .\myapp\templates\contactos_detail.html:35
+#: .\myapp\templates\contactos_form.html:45
+msgid "Email"
+msgstr "Email"
+
+#: .\myapp\templates\admin_contactos.html:62
+#: .\myapp\templates\contactos_detail.html:44
+#: .\myapp\templates\contactos_form.html:54
+msgid "Mensaje"
+msgstr "Message"
+
+#: .\myapp\templates\admin_contactos.html:63
+msgid "Fecha de Envío"
+msgstr "Send Date"
+
+#: .\myapp\templates\admin_contactos.html:78
+msgid "Ver detalles"
+msgstr "View Details"
+
+#: .\myapp\templates\admin_contactos.html:92
+msgid "No hay contactos registrados aún."
+msgstr "No contacts registered yet."
+
+#: .\myapp\templates\admin_noticias.html:13
+msgid "Crear Nueva Noticia"
+msgstr "Create New News"
+
+#: .\myapp\templates\admin_noticias.html:25
+#, python-format
+msgid ""
+"Total: <span class=\"badge bg-light text-success badge-theme\" data-"
+"dark=\"bg-dark text-light\" data-light=\"bg-light text-"
+"success\">%(noticias|length)s</span> noticias"
+msgstr ""
+"Total: <span class=\"badge bg-light text-success badge-theme\" data-"
+"dark=\"bg-dark text-light\" data-light=\"bg-light text-"
+"success\">%(noticias|length)s</span> news"
+
+#: .\myapp\templates\admin_noticias.html:66
+msgid "No hay noticias registradas aún."
+msgstr "No news registered yet."
+
+#: .\myapp\templates\avElim.html:4
+msgid "Eliminar aviso"
+msgstr "Delete Announcement"
+
+#: .\myapp\templates\avElim.html:13
+msgid "¿Eliminar aviso?"
+msgstr "Delete Announcement?"
+
+#: .\myapp\templates\avElim.html:15
+#, python-format
+msgid ""
+"¿Estás seguro de que deseas eliminar el aviso <strong>\"%(titulo)s\"</"
+"strong>? Esta acción no se puede deshacer."
+msgstr ""
+"Are you sure you want to delete the announcement <strong>\"%(titulo)s\"</strong>? "
+"This action cannot be undone."
+
+#: .\myapp\templates\avElim.html:21
+#: .\myapp\templates\colaboradores_elim.html:21
+#: .\myapp\templates\contactos_elim.html:20
+#: .\myapp\templates\noticia_elim.html:21
+msgid "Sí, eliminar"
+msgstr "Yes, Delete"
+
+#: .\myapp\templates\avElim.html:24 .\myapp\templates\aviso_form.html:23
+#: .\myapp\templates\colaboradores_elim.html:24
+#: .\myapp\templates\colaboradores_form.html:22
+#: .\myapp\templates\contactos_elim.html:23
+#: .\myapp\templates\noticia_elim.html:24
+#: .\myapp\templates\noticia_form.html:16 .\myapp\templates\noticias.html:16
+msgid "Cancelar"
+msgstr "Cancel"
+
+#: .\myapp\templates\aviso_detail.html:38
+msgid "Volver a Avisos"
+msgstr "Back to Announcements"
+
+#: .\myapp\templates\aviso_form.html:4
+msgid "Crear/Editar aviso"
+msgstr "Create/Edit Announcement"
+
+#: .\myapp\templates\aviso_form.html:16
+msgid "Editar aviso"
+msgstr "Edit Announcement"
+
+#: .\myapp\templates\aviso_form.html:18
+msgid "Crear nuevo aviso"
+msgstr "Create New Announcement"
+
+#: .\myapp\templates\aviso_form.html:21
+msgid "Completa los datos para publicar un aviso."
+msgstr "Fill in the data to publish an announcement."
+
+#: .\myapp\templates\aviso_form.html:43
+msgid "Escribe el contenido completo del aviso."
+msgstr "Write the complete content of the announcement."
+
+#: .\myapp\templates\aviso_form.html:51
+msgid "Guardar Aviso"
+msgstr "Save Announcement"
+
+#: .\myapp\templates\aviso_form.html:54
+#: .\myapp\templates\colaboradores_form.html:73
+#: .\myapp\templates\contactos_form.html:67
+#: .\myapp\templates\noticia_form.html:67 .\myapp\templates\noticias.html:67
+msgid "Volver"
+msgstr "Back"
+
+#: .\myapp\templates\avisos.html:4 .\myapp\templates\avisos.html:10
+#: .\myapp\templates\base.html:171
+msgid "Avisos"
+msgstr "Announcements"
+
+#: .\myapp\templates\avisos.html:11
+msgid "Últimos avisos y comunicados"
+msgstr "Latest announcements and communications"
+
+#: .\myapp\templates\avisos.html:14
+msgid "Buscar por título..."
+msgstr "Search by title..."
+
+#: .\myapp\templates\avisos.html:31
+msgid "Leer más"
+msgstr "Read More"
+
+#: .\myapp\templates\avisos.html:39
+msgid "No hay avisos por el momento."
+msgstr "No announcements at the moment."
+
+#: .\myapp\templates\base.html:10
+msgid "Portal de avisos"
+msgstr "Announcements Portal"
+
+#: .\myapp\templates\base.html:154
+msgid "Alternar navegación"
+msgstr "Toggle navigation"
+
+#: .\myapp\templates\base.html:165 .\myapp\templates\inicio.html:5
+msgid "Inicio"
+msgstr "Home"
+
+#: .\myapp\templates\base.html:177
+msgid "Noticias"
+msgstr "News"
+
+#: .\myapp\templates\base.html:186 .\myapp\templates\colaboradores.html:5
+#: .\myapp\templates\colaboradores.html:11
+msgid "Colaboradores"
+msgstr "Collaborators"
+
+#: .\myapp\templates\base.html:195
+msgid "Contacto"
+msgstr "Contact"
+
+#: .\myapp\templates\base.html:220 .\myapp\templates\base.html:326
+msgid "Tema oscuro"
+msgstr "Dark Theme"
+
+#: .\myapp\templates\base.html:226
+msgid "Cerrar sesión"
+msgstr "Logout"
+
+#: .\myapp\templates\base.html:228
+msgid "Panel Admin"
+msgstr "Admin Panel"
+
+#: .\myapp\templates\base.html:231
+msgid "Iniciar sesión"
+msgstr "Login"
+
+#: .\myapp\templates\base.html:264
+msgid "Todos los derechos reservados."
+msgstr "All rights reserved."
+
+#: .\myapp\templates\base.html:324
+msgid "Tema claro"
+msgstr "Light Theme"
+
+#: .\myapp\templates\colaborador_detail.html:43
+msgid "Volver a Colaboradores"
+msgstr "Back to Collaborators"
+
+#: .\myapp\templates\colaboradores.html:12
+msgid "Conoce a nuestro equipo"
+msgstr "Meet our team"
+
+#: .\myapp\templates\colaboradores.html:34
+msgid "Ver más"
+msgstr "View More"
+
+#: .\myapp\templates\colaboradores.html:43
+msgid "No hay colaboradores por el momento."
+msgstr "No collaborators at the moment."
+
+#: .\myapp\templates\colaboradores_elim.html:4
+msgid "Eliminar colaborador"
+msgstr "Delete Collaborator"
+
+#: .\myapp\templates\colaboradores_elim.html:13
+msgid "¿Eliminar colaborador?"
+msgstr "Delete Collaborator?"
+
+#: .\myapp\templates\colaboradores_elim.html:15
+#, python-format
+msgid ""
+"¿Estás seguro de que deseas eliminar al colaborador <strong>\"%(nombre)s\"</"
+"strong>? Esta acción no se puede deshacer."
+msgstr ""
+"Are you sure you want to delete the collaborator <strong>\"%(nombre)s\"</strong>? "
+"This action cannot be undone."
+
+#: .\myapp\templates\colaboradores_form.html:3
+msgid "Crear/Editar colaborador"
+msgstr "Create/Edit Collaborator"
+
+#: .\myapp\templates\colaboradores_form.html:15
+msgid "Editar colaborador"
+msgstr "Edit Collaborator"
+
+#: .\myapp\templates\colaboradores_form.html:17
+msgid "Crear nuevo colaborador"
+msgstr "Create New Collaborator"
+
+#: .\myapp\templates\colaboradores_form.html:20
+msgid "Completa los datos del colaborador."
+msgstr "Fill in the collaborator data."
+
+#: .\myapp\templates\colaboradores_form.html:40
+msgid "Descripción / Cargo"
+msgstr "Description / Position"
+
+#: .\myapp\templates\colaboradores_form.html:42
+msgid "Ej: Ingeniero de Sistemas, Gerente, Especialista en Proyectos, etc."
+msgstr "Ex: Systems Engineer, Manager, Project Specialist, etc."
+
+#: .\myapp\templates\colaboradores_form.html:49
+msgid "Fotografía"
+msgstr "Photography"
+
+#: .\myapp\templates\colaboradores_form.html:55
+#: .\myapp\templates\noticia_form.html:49 .\myapp\templates\noticias.html:49
+msgid "Foto actual"
+msgstr "Current Photo"
+
+#: .\myapp\templates\colaboradores_form.html:61
+msgid ""
+"Formatos permitidos: JPG, PNG, GIF. Máximo 5MB. Se recomienda 400x400px."
+msgstr ""
+"Allowed formats: JPG, PNG, GIF. Maximum 5MB. 400x400px recommended."
+
+#: .\myapp\templates\colaboradores_form.html:70
+msgid "Guardar Colaborador"
+msgstr "Save Collaborator"
+
+#: .\myapp\templates\contactos_detail.html:4
+#: .\myapp\templates\contactos_detail.html:10
+msgid "Detalles del Contacto"
+msgstr "Contact Details"
+
+#: .\myapp\templates\contactos_detail.html:11
+msgid "Información completa del contacto"
+msgstr "Complete contact information"
+
+#: .\myapp\templates\contactos_detail.html:18
+msgid "Información del Contacto"
+msgstr "Contact Information"
+
+#: .\myapp\templates\contactos_detail.html:28
+msgid "Número de Teléfono"
+msgstr "Phone Number"
+
+#: .\myapp\templates\contactos_detail.html:56
+msgid "Volver a Contactos"
+msgstr "Back to Contacts"
+
+#: .\myapp\templates\contactos_detail.html:61
+msgid "Eliminar"
+msgstr "Delete"
+
+#: .\myapp\templates\contactos_elim.html:3
+msgid "Eliminar contacto"
+msgstr "Delete Contact"
+
+#: .\myapp\templates\contactos_elim.html:12
+msgid "¿Eliminar contacto?"
+msgstr "Delete Contact?"
+
+#: .\myapp\templates\contactos_elim.html:14
+#, python-format
+msgid ""
+"¿Estás seguro de que deseas eliminar al contacto <strong>\"%(nombre)s\"</"
+"strong>? Esta acción no se puede deshacer."
+msgstr ""
+"Are you sure you want to delete the contact <strong>\"%(nombre)s\"</strong>? "
+"This action cannot be undone."
+
+#: .\myapp\templates\contactos_form.html:3
+msgid "Crear/Editar contacto"
+msgstr "Create/Edit Contact"
+
+#: .\myapp\templates\contactos_form.html:14
+msgid ""
+"Mandanos mensaje para saber tu opinión, <br> dudas o sugerencias acerca de "
+"nuestros servicios"
+msgstr ""
+"Send us a message to know your opinion, <br> questions or suggestions about "
+"our services"
+
+#: .\myapp\templates\contactos_form.html:16
+msgid "Completa los datos"
+msgstr "Fill in the data"
+
+#: .\myapp\templates\contactos_form.html:29
+msgid "Ingresa tu nombre completo."
+msgstr "Enter your full name."
+
+#: .\myapp\templates\contactos_form.html:36
+msgid "Número Telefónico"
+msgstr "Phone Number"
+
+#: .\myapp\templates\contactos_form.html:38
+msgid "Ej: +58-212-1234567 o 04121234567"
+msgstr "Ex: +58-212-1234567 or 04121234567"
+
+#: .\myapp\templates\contactos_form.html:47
+msgid "Ej: contacto@ejemplo.com"
+msgstr "Ex: contact@example.com"
+
+#: .\myapp\templates\contactos_form.html:56
+msgid "Mensaje o descripción."
+msgstr "Message or description."
+
+#: .\myapp\templates\contactos_form.html:64
+msgid "Guardar"
+msgstr "Save"
+
+#: .\myapp\templates\inicio.html:11
+msgid "¿Qué somos?"
+msgstr "Who are we?"
+
+#: .\myapp\templates\inicio.html:19
+msgid "Misión"
+msgstr "Mission"
+
+#: .\myapp\templates\inicio.html:20
+msgid "¿Cual es nuestra meta?"
+msgstr "What is our goal?"
+
+#: .\myapp\templates\inicio.html:24
+msgid ""
+"Mejorar la calidad de la educación de niñas, \n"
+"                                niños y jóvenes por medio de las tics y "
+"capacitación para cotribuir al desarrollo\n"
+"                            comunitario de la zona noroeste del Estado de "
+"México."
+msgstr ""
+"Improve the quality of education for girls, \n"
+"                                boys and young people through ICTs and training "
+"to contribute to the development\n"
+"                            community of the northwest area of the State of Mexico."
+
+#: .\myapp\templates\inicio.html:30
+msgid "Edificio"
+msgstr "Building"
+
+#: .\myapp\templates\inicio.html:35
+msgid "Visión"
+msgstr "Vision"
+
+#: .\myapp\templates\inicio.html:36
+msgid "Informe"
+msgstr "Report"
+
+#: .\myapp\templates\inicio.html:40
+msgid ""
+"Ser una asociación civil consolidada, \n"
+"                                empoderando a las comunidades con mejores "
+"oportunidades de desarrollo,\n"
+"                            logrando un mejro nivel educativo con el uso de "
+"herramientas tecnológicas"
+msgstr ""
+"Be a consolidated civil association, \n"
+"                                empowering communities with better development opportunities,\n"
+"                            achieving a better educational level with the use of "
+"technological tools"
+
+#: .\myapp\templates\inicio.html:46
+msgid "Construcción"
+msgstr "Construction"
+
+#: .\myapp\templates\inicio.html:51 .\myapp\templates\inicio.html:62
+msgid "Valores"
+msgstr "Values"
+
+#: .\myapp\templates\inicio.html:52
+msgid "Expresión"
+msgstr "Expression"
+
+#: .\myapp\templates\inicio.html:56
+msgid ""
+"Demuestra valores de calidad educativa \n"
+"                                y desarrollo comunitario, enfoncándose en "
+"empoderar a las\n"
+"                                comunidades a través del acceso a la "
+"tecnología y conectividad\n"
+"                                para mejorar la educación en zonas rurales e "
+"indígenas."
+msgstr ""
+"Demonstrates educational quality values \n"
+"                                and community development, focusing on empowering\n"
+"                                communities through access to technology and connectivity\n"
+"                                to improve education in rural and indigenous areas."
+
+#: .\myapp\templates\inicio.html:71
+msgid "Obras por realizar"
+msgstr "Works to be Carried Out"
+
+#: .\myapp\templates\inicio.html:79
+msgid "Implementación de redes de comunicación e internet"
+msgstr "Implementation of Communication Networks and Internet"
+
+#: .\myapp\templates\inicio.html:83
+msgid "Llevar el internet y la comunicación a zonas rurales."
+msgstr "Bring internet and communication to rural areas."
+
+#: .\myapp\templates\inicio.html:91
+msgid "Dar mantenimiento a nuestras obras"
+msgstr "Maintain Our Works"
+
+#: .\myapp\templates\inicio.html:95
+msgid "Proporcionar actualizaciones y reposiciones de daños."
+msgstr "Provide updates and damage replacements."
+
+#: .\myapp\templates\inicio.html:103
+msgid "Actualización de software"
+msgstr "Software Update"
+
+#: .\myapp\templates\inicio.html:107
+msgid "Servicios de mejoras al sistema"
+msgstr "System Improvement Services"
+
+#: .\myapp\templates\inicio.html:118
+msgid "Metas a cumplir"
+msgstr "Goals to Achieve"
+
+#: .\myapp\templates\inicio.html:122
+msgid "Mejora de oportunidades"
+msgstr "Improvement of Opportunities"
+
+#: .\myapp\templates\inicio.html:123
+msgid ""
+"¡La tecnologia es un paso hacia la grandesa! <br> Por eso queremos que llege "
+"a cada uno\n"
+"                de los niños en San José del Rincón, mejorando así su futuro"
+msgstr ""
+"Technology is a step towards greatness! <br> That's why we want it to reach every\n"
+"                child in San José del Rincón, thus improving their future"
+
+#: .\myapp\templates\inicio.html:126
+msgid "Oportunidades"
+msgstr "Opportunities"
+
+#: .\myapp\templates\inicio.html:131
+msgid "Acceso al maravilloso mundo de la tecnología"
+msgstr "Access to the Wonderful World of Technology"
+
+#: .\myapp\templates\inicio.html:132
+msgid ""
+"¡Actualizando la vida en zona mazahua!<br>Implementar una educacion y "
+"cultura digital en jovenes y niños mazahuas"
+msgstr ""
+"Updating life in the Mazahua area!<br>Implementing digital education and culture "
+"in Mazahua youth and children"
+
+#: .\myapp\templates\inicio.html:134
+msgid "Mejora"
+msgstr "Improvement"
+
+#: .\myapp\templates\inicio.html:139 .\myapp\templates\inicio.html:142
+msgid "Contribuciones"
+msgstr "Contributions"
+
+#: .\myapp\templates\inicio.html:140
+msgid ""
+"¡Asegurar la educacion es asegurar el futuro!<br>Aporte en el crecimiento de "
+"los jovenes y niños para la construccion de un futuro"
+msgstr ""
+"Ensuring education is ensuring the future!<br>Contribution to the growth of "
+"young people and children for the construction of a future"
+
+#: .\myapp\templates\login.html:5
+msgid "Login"
+msgstr "Login"
+
+#: .\myapp\templates\login.html:15
+msgid "Acceso de Administrador"
+msgstr "Administrator Access"
+
+#: .\myapp\templates\login.html:16
+msgid "Ingresa tus credenciales"
+msgstr "Enter your credentials"
+
+#: .\myapp\templates\login.html:29
+msgid "Usuario"
+msgstr "Username"
+
+#: .\myapp\templates\login.html:35
+msgid "Ingresa tu usuario"
+msgstr "Enter your username"
+
+#: .\myapp\templates\login.html:41
+msgid "Contraseña"
+msgstr "Password"
+
+#: .\myapp\templates\login.html:47
+msgid "Ingresa tu contraseña"
+msgstr "Enter your password"
+
+#: .\myapp\templates\login.html:53
+msgid "Iniciar Sesión"
+msgstr "Login"
+
+#: .\myapp\templates\login.html:57
+msgid "Volver al inicio"
+msgstr "Back to Home"
+
+#: .\myapp\templates\noticia_detail.html:49
+msgid "Volver a Noticias"
+msgstr "Back to News"
+
+#: .\myapp\templates\noticia_elim.html:3
+msgid "Eliminar noticia"
+msgstr "Delete News"
+
+#: .\myapp\templates\noticia_elim.html:12
+msgid "¿Eliminar noticia?"
+msgstr "Delete News?"
+
+#: .\myapp\templates\noticia_elim.html:14
+#, python-format
+msgid ""
+"¿Estás seguro de que deseas eliminar la noticia <strong>\"%(titulo)s\"</"
+"strong>? \n"
+"            Esta acción no se puede deshacer."
+msgstr ""
+"Are you sure you want to delete the news <strong>\"%(titulo)s\"</strong>? \n"
+"            This action cannot be undone."
+
+#: .\myapp\templates\noticia_form.html:3 .\myapp\templates\noticias.html:3
+msgid "Crear/Editar noticia"
+msgstr "Create/Edit News"
+
+#: .\myapp\templates\noticia_form.html:13 .\myapp\templates\noticias.html:13
+msgid "Editar noticia"
+msgstr "Edit News"
+
+#: .\myapp\templates\noticia_form.html:13 .\myapp\templates\noticias.html:13
+msgid "Crear nueva noticia"
+msgstr "Create New News"
+
+#: .\myapp\templates\noticia_form.html:14 .\myapp\templates\noticias.html:14
+msgid "Completa los datos para publicar una noticia."
+msgstr "Fill in the data to publish news."
+
+#: .\myapp\templates\noticia_form.html:36 .\myapp\templates\noticias.html:36
+msgid "Desarrolla el contenido completo de la noticia."
+msgstr "Develop the complete content of the news."
+
+#: .\myapp\templates\noticia_form.html:43 .\myapp\templates\noticias.html:43
+msgid "Fotografía (opcional)"
+msgstr "Photography (optional)"
+
+#: .\myapp\templates\noticia_form.html:55 .\myapp\templates\noticias.html:55
+msgid "JPG, PNG, GIF. Máximo 5MB. Se recomienda 800x600px."
+msgstr "JPG, PNG, GIF. Maximum 5MB. 800x600px recommended."
+
+#: .\myapp\templates\noticia_form.html:64 .\myapp\templates\noticias.html:64
+msgid "Guardar Noticia"
+msgstr "Save News"

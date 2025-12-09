@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{{ noticia.titulo }} | SEMARTEC{% endblock %}
+
+{% block content %}
+<div class="container my-5 section-title1">
+  <!-- Encabezado -->
+  <div class="row mb-4">
+    <div class="col-lg-8 offset-lg-2">
+      <h1 class="fw-bold mb-2">{{ noticia.titulo }}</h1>
+      <div class="d-flex justify-content-between align-items-center text-muted mb-4">
+        <small>
+          <i class="fa-solid fa-calendar"></i>
+          {{ noticia.fecha_publicacion|date:"d \d\e F \d\e Y - H:i" }}
+        </small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Imagen -->
+  {% if noticia.fotografia %}
+  <div class="row mb-4">
+    <div class="col-lg-8 offset-lg-2">
+      <div class="card shadow-sm overflow-hidden">
+        <img src="{{ noticia.fotografia.url }}" alt="{{ noticia.titulo }}" class="card-img img-fluid" style="max-height: 500px; object-fit: cover;">
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Contenido -->
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <article class="card p-4 shadow-sm">
+        <div class="article-content">
+          {{ noticia.descripcion|linebreaksbr }}
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- Pie de página -->
+  <div class="row mt-5">
+    <div class="col-lg-8 offset-lg-2">
+      <hr>
+      <a href="{% url 'noticias' %}" class="btn btn-primary">
+        <i class="fa-solid fa-arrow-left"></i> {% trans "Volver a Noticias" %}
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .article-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+  }
+  
+  .article-content p {
+    margin-bottom: 1.5rem;
+  }
+</style>
+{% endblock %}

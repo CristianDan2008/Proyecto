@@ -1,0 +1,801 @@
+/**
+ * ============================================================
+ * MAIN.CSS - ESTILOS PRINCIPALES DEL PROYECTO SEMARTEC
+ * ============================================================
+ * Este archivo contiene todos los estilos CSS organizados por:
+ * 1. Variables y temas
+ * 2. Elementos generales
+ * 3. Navegación
+ * 4. Contenido
+ * 5. Componentes
+ * 6. Efectos y animaciones
+ * 7. Media queries
+ */
+
+/* ============================================================
+   SECCIÓN 1: VARIABLES CSS Y TEMAS
+   ============================================================ */
+
+/**
+ * TEMA CLARO (POR DEFECTO)
+ * Variables de colores y estilos para tema claro
+ */
+:root {
+  /* Colores primarios */
+  --primary-color: #008080;          /* Color principal (verde azulado) */
+  --primary-dark: #080804;           /* Variante oscura del primario */
+  --secondary-color: #034d8a;        /* Color secundario (azul) */
+  --dark-bg: #2c3e50;                /* Fondo oscuro alternativo */
+  --light-text: #ffffff;             /* Texto claro */
+  
+  /* Fondos - Tema Claro */
+  --bg-primary: #f5f5f5;             /* Fondo principal (gris claro) */
+  --bg-secondary: #ffffff;           /* Fondo secundario (blanco) */
+  --bg-tertiary: #008080;            /* Fondo terciario (color primario) */
+  
+  /* Texto - Tema Claro */
+  --text-primary: #333333;           /* Texto principal (gris oscuro) */
+  --text-secondary: #666666;         /* Texto secundario (gris medio) */
+  
+  /* Bordes y sombras - Tema Claro */
+  --border-color: #ddd;              /* Color de bordes */
+  --card-shadow: rgba(248, 247, 247, 0.15); /* Sombra de tarjetas */
+  --hover-bg: rgba(255, 255, 255, 0.15);    /* Fondo hover */
+  
+  /* Transiciones */
+  --transition: all 0.3s ease;       /* Transición estándar */
+}
+
+/**
+ * TEMA OSCURO
+ * Variables de colores y estilos para tema oscuro
+ */
+body.dark-mode {
+  /* Fondos - Tema Oscuro */
+  --bg-primary: #121212;             /* Fondo principal (negro muy oscuro) */
+  --bg-secondary: #1e1e1e;           /* Fondo secundario (gris muy oscuro) */
+  --bg-tertiary: #004d4d;            /* Fondo terciario (verde azulado oscuro) */
+  
+  /* Texto - Tema Oscuro */
+  --text-primary: #e9ecef;           /* Texto principal (gris muy claro) */
+  --text-secondary: #d0d0d0;         /* Texto secundario (gris claro) */
+  
+  /* Bordes y sombras - Tema Oscuro */
+  --border-color: #333333;           /* Color de bordes */
+  --card-shadow: rgba(0, 0, 0, 0.5); /* Sombra de tarjetas */
+  --hover-bg: rgba(255, 255, 255, 0.1); /* Fondo hover */
+  
+  /* Enlaces */
+  --link-color: #66d9d9;             /* Color de enlaces */
+  --link-hover: #99e6e6;             /* Color hover de enlaces */
+}
+
+
+/* ============================================================
+   SECCIÓN 2: ESTILOS DEL TEMA OSCURO (OVERRIDES GLOBALES)
+   ============================================================ */
+
+/**
+ * Estilos generales aplicados cuando body.dark-mode está activo
+ */
+body.dark-mode {
+  background-color: #121212 !important;
+  color: #e9ecef !important;
+}
+
+/* Dropdown menu en tema oscuro */
+body.dark-mode .dropdown-menu {
+  background-color: #1e1e1e !important;
+  color: #e9ecef !important;
+}
+
+/* Elementos del dropdown */
+body.dark-mode .dropdown-item {
+  color: #e9ecef !important;
+}
+
+body.dark-mode .dropdown-item:hover,
+body.dark-mode .dropdown-item:focus {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: #e9ecef !important;
+}
+
+body.dark-mode .dropdown-divider {
+  border-color: #333333 !important;
+}
+
+/* Headings en tema oscuro */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #e9ecef !important;
+}
+
+/* Texto general en tema oscuro */
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode td,
+body.dark-mode th,
+body.dark-mode span,
+body.dark-mode div {
+  color: #e9ecef !important;
+}
+
+/* Etiquetas y label en tema oscuro */
+body.dark-mode label {
+  color: #e9ecef !important;
+}
+
+/* Tarjetas en tema oscuro */
+body.dark-mode .card {
+  background-color: #1e1e1e !important;
+  color: #e9ecef !important;
+  border-color: #333333 !important;
+}
+
+/* Alertas en tema oscuro */
+body.dark-mode .alert {
+  background-color: #1e1e1e !important;
+  color: #e9ecef !important;
+  border-color: #333333 !important;
+}
+
+/* Formularios en tema oscuro */
+body.dark-mode .form-control,
+body.dark-mode .form-select,
+body.dark-mode textarea {
+  background-color: #2a2a2a !important;
+  color: #e9ecef !important;
+  border-color: #333333 !important;
+}
+
+body.dark-mode .form-control:focus,
+body.dark-mode .form-select:focus,
+body.dark-mode textarea:focus {
+  background-color: #2a2a2a !important;
+  color: #e9ecef !important;
+  border-color: #008080 !important;
+  box-shadow: 0 0 0 0.25rem rgba(0, 128, 128, 0.25) !important;
+}
+
+/* Botones en tema oscuro */
+body.dark-mode .btn-primary {
+  background-color: #008080 !important;
+  border-color: #008080 !important;
+}
+
+body.dark-mode .btn-primary:hover {
+  background-color: #006666 !important;
+  border-color: #006666 !important;
+}
+
+/* Tablas en tema oscuro */
+body.dark-mode .table {
+  color: #e9ecef !important;
+  border-color: #333333 !important;
+}
+
+body.dark-mode .table > thead > tr > th {
+  background-color: #2a2a2a !important;
+  color: #e9ecef !important;
+  border-color: #333333 !important;
+}
+
+body.dark-mode .table > tbody > tr > td {
+  border-color: #333333 !important;
+}
+
+/* Contenedor en tema oscuro */
+body.dark-mode .container {
+  color: #e9ecef !important;
+}
+
+/* Enlaces en tema oscuro */
+body.dark-mode a {
+  color: #66d9d9 !important;
+}
+
+body.dark-mode a:hover {
+  color: #99e6e6 !important;
+}
+
+/* Texto muted en tema oscuro */
+body.dark-mode .text-muted {
+  color: #d0d0d0 !important;
+}
+
+body.dark-mode .small {
+  color: #d0d0d0 !important;
+}
+
+
+/* ============================================================
+   SECCIÓN 3: ELEMENTOS GENERALES
+   ============================================================ */
+
+/**
+ * Estilos globales del body y elementos base
+ */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Logo redondo */
+#logo1 {
+  border-radius: 50px;
+}
+
+/* Footer del sitio */
+.site-footer {
+  background-color: var(--bg-tertiary) !important;
+  color: var(--light-text);
+}
+
+/* ============================================================
+   SECCIÓN 4: HEADER Y SECCIONES
+   ============================================================ */
+
+/**
+ * Estilos para headers y secciones de contenido
+ */
+
+/* Header principal */
+.header {
+  background-color: var(--bg-tertiary);
+  color: var(--light-text);
+  border-radius: 10px;
+  padding: 15px;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+/* Sección título 1 (contenido principal) */
+.section-title1 {
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 135px auto 20px auto !important;
+}
+
+/* Sección título inicial */
+.section-titleini {
+  background-color: var(--bg-tertiary);
+  color: var(--light-text);
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 135px auto 20px auto !important;
+}
+
+/* Sección título estándar */
+.section-title {
+  background-color: var(--bg-tertiary);
+  color: var(--light-text);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+.section-title h2 {
+  color: var(--light-text);
+  font-weight: bold;
+  margin: 0;
+}
+
+/* ============================================================
+   SECCIÓN 5: NAVEGACIÓN
+   ============================================================ */
+
+/**
+ * Tabs y navegación personalizada
+ */
+
+/* Contenedor de tabs personalizados */
+.nav-tabs-custom {
+  background-color: #333;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+/* Tab individual */
+.nav-tab {
+  background-color: var(--bg-tertiary);
+  color: var(--light-text);
+  padding: 10px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: var(--transition);
+}
+
+.nav-tab:hover {
+  background-color: var(--bg-tertiary);
+  color: var(--light-text);
+  transform: translateY(-2px);
+}
+
+
+/* ============================================================
+   SECCIÓN 6: CONTENIDO Y CAJAS
+   ============================================================ */
+
+/**
+ * Estilos para contenedores de contenido
+ */
+
+/* Caja de contenido general */
+.content-box {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border-radius: 15px;
+  padding: 30px;
+  margin: 20px auto;
+  max-width: 1200px;
+  transition: var(--transition);
+}
+
+/* Tarjeta blanca */
+.white-card {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border-radius: 10px;
+  padding: 20px;
+  transition: var(--transition);
+}
+
+/* Caja de búsqueda */
+.search-box {
+  background-color: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: var(--transition);
+}
+
+/* ============================================================
+   SECCIÓN 7: TARJETAS PERSONALIZADAS
+   ============================================================ */
+
+/**
+ * Componentes de tarjetas con estilos personalizados
+ */
+
+/* Tarjeta personalizada */
+.card-custom {
+  background-color: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 10px;
+  padding: 15px;
+  height: 100%;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Título de tarjeta personalizada */
+.card-title-custom {
+  font-weight: bold;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+/* Subtítulo de tarjeta */
+.card-subtitle {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+/* Imagen en tarjeta */
+.card-image {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Imágenes pequeñas en tarjetas de "Qué somos" */
+.card-image-small {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* ============================================================
+   SECCIÓN 8: USUARIO
+   ============================================================ */
+
+/**
+ * Componentes relacionados con el perfil del usuario
+ */
+
+/* Contenedor de
+  height: 30px;
+  background-color: #8b0000;
+  border-radius: 50%;
+}
+
+/* Nombre de usuario */
+.user-name {
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+/* ============================================================
+   SECCIÓN 9: SECCIONES ESPECIALES
+   ============================================================ */
+
+/**
+ * Estilos para secciones específicas del sitio
+ */
+
+/* Sección con fondo terciario */
+.orange-section {
+  background-color: var(--bg-tertiary);
+  color: var(--light-text);
+  border-radius: 15px;
+  padding: 30px;
+  margin: 20px auto;
+  max-width: 1200px;
+  transition: var(--transition);
+}
+
+/* Sección de objetivos */
+.goals-section {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border-radius: 15px;
+  padding: 30px;
+  margin: 20px auto;
+  max-width: 1200px;
+  transition: var(--transition);
+}
+
+/* Elemento de objetivo */
+.goal-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+/* Texto dentro del objetivo */
+.goal-text h5 {
+  color: var(--text-primary);
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.goal-text p {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Imagen dentro del objetivo */
+.goal-image {
+  max-width: 200px;
+  height: auto;
+}
+
+
+/* ============================================================
+   SECCIÓN 10: NAVBAR MODERNA
+   ============================================================ */
+
+/**
+ * Estilos de navegación moderna con gradientes y efectos
+ */
+
+/* Encabezado del sitio */
+.site-header {
+  box-shadow: 0 4px 12px var(--card-shadow);
+}
+
+/* Barra de navegación moderna */
+.modern-navbar {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--primary-dark) 100%
+  );
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+}
+
+/* Navbar cuando el usuario hace scroll */
+.modern-navbar.scrolled {
+  padding: 0.5rem 0;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo de la marca */
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--light-text) !important;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Línea decorativa bajo el logo (hover) */
+.navbar-brand::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--light-text);
+  transition: width 0.3s ease;
+}
+
+.navbar-brand:hover::after {
+  width: 100%;
+}
+
+.navbar-brand:hover {
+  transform: translateY(-2px);
+}
+
+/* Enlace de navegación moderna */
+.modern-nav-link {
+  color: var(--light-text) !important;
+  font-weight: 600;
+  padding: 0.5rem 1.2rem !important;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Icono dentro del enlace */
+.modern-nav-link i {
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+/* Efecto de hover - fondo deslizante */
+.modern-nav-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: left 0.3s ease;
+  z-index: 0;
+}
+
+.modern-nav-link:hover::before {
+  left: 0;
+}
+
+/* Hover del enlace */
+.modern-nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modern-nav-link:hover i {
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* Enlace activo */
+.modern-nav-link.active {
+  background-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Botón de login */
+.login-btn {
+  background-color: var(--light-text);
+  color: var(--primary-color) !important;
+  font-weight: 700;
+  border: 2px solid var(--light-text);
+}
+
+.login-btn:hover {
+  background-color: transparent !important;
+  color: var(--light-text) !important;
+  border-color: var(--light-text);
+  transform: translateY(-2px);
+}
+
+/* Botón toggle de navegación (hamburguesa) */
+.navbar-toggler {
+  border: 2px solid var(--light-text);
+  padding: 0.5rem 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: rotate(90deg);
+}
+
+/* Icono del toggler */
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Animación de colapso de navbar */
+.navbar-collapse {
+  transition: all 0.3s ease;
+}
+
+/* Responsive - Navbar en móviles */
+@media (max-width: 768px) {
+  .navbar-collapse {
+    background: linear-gradient(
+      135deg,
+      var(--primary-dark) 0%,
+      var(--secondary-color) 100%
+    );
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .modern-nav-link {
+    margin: 0.3rem 0;
+  }
+}
+
+
+/* ============================================================
+   SECCIÓN 11: EFECTOS Y ANIMACIONES
+   ============================================================ */
+
+/**
+ * Animaciones y efectos visuales
+ */
+
+/* Animación de brillo para el logo */
+@keyframes shine {
+  0% {
+    background-position: -200%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
+/* Logo con efecto brillo infinito */
+.navbar-brand.shine {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shine 3s infinite;
+}
+
+/* ============================================================
+   SECCIÓN 12: FORMULARIOS
+   ============================================================ */
+
+/**
+ * Estilos para elementos de formularios
+ */
+
+/* Inputs y elementos de formulario */
+form input[type="text"],
+form textarea,
+form input[type="email"],
+form input[type="password"],
+form select,
+form input[type="file"] {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  border-radius: 8px;
+  border: 1px solid var(--border-color) !important;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  width: 100%;
+  transition: var(--transition);
+}
+
+/* Placeholder en inputs */
+form input[type="text"]::placeholder,
+form textarea::placeholder,
+form input[type="email"]::placeholder,
+form input[type="password"]::placeholder {
+  color: var(--text-secondary) !important;
+  opacity: 0.7;
+}
+
+/* Estado focus en inputs */
+form input[type="text"]:focus,
+form textarea:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+form select:focus,
+form input[type="file"]:focus {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 0.2rem rgba(0, 128, 128, 0.25) !important;
+  outline: none;
+}
+
+/* Área de texto personalizada */
+form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Botones dentro de formularios */
+form button {
+  transition: var(--transition);
+}
+
+/* Labels y legends en formularios */
+form label,
+form legend {
+  color: var(--text-primary) !important;
+}
+
+/* ============================================================
+   FIN DEL CSS - ORGANIZACIÓN COMPLETADA
+   ============================================================ */
+
+/* Imágenes en la sección de metas - formato uniforme y pequeño */
+.goal-image {
+    width: 180px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Ajuste responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+    .goal-image {
+        width: 150px;
+        height: 100px;
+    }
+}
+.goal-image {
+    width: 180px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Ajuste responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+    .goal-image {
+        width: 150px;
+        height: 100px;
+    }
+}
+
+

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Avisos" %} | SEMARTEC{% endblock %}
+
+{% block content %}
+<div class="container my-5 section-title1">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+      <h2 class="fw-bold mb-0">{% trans "Avisos" %}</h2>
+      <small class="text-muted">{% trans "Últimos avisos y comunicados" %}</small>
+    </div>
+    <div class="d-flex gap-2">
+      <input id="buscarAviso" class="form-control form-control-sm" style="min-width:220px" placeholder="{% trans "Buscar por título..." %}">
+    </div>
+  </div>
+
+  <div class="row g-4">
+    {% for a in avisos %}
+    <div class="col-12 col-sm-6 col-lg-4 aviso-item">
+      <div class="card h-100 shadow-sm hover-shadow">
+        <div class="card-body d-flex flex-column">
+          <div class="d-flex justify-content-between align-items-start mb-2">
+            <h5 class="card-title mb-0">{{ a.titulo }}</h5>
+            <span class="badge bg-secondary small">{{ a.fecha_publicacion|date:"d/m/Y" }}</span>
+          </div>
+          <p class="card-text text-muted mb-3">{{ a.descripcion|linebreaksbr|truncatechars:180 }}</p>
+          <div class="mt-auto d-flex justify-content-between align-items-center">
+            <small class="text-muted">{{ a.fecha_publicacion|date:"H:i" }}</small>
+            <a href="{% url 'aviso-detalle' a.pk %}" class="btn btn-sm btn-primary">
+              <i class="fa-solid fa-arrow-right"></i> {% trans "Leer más" %}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% empty %}
+    <div class="col-12">
+      <div class="alert alert-info mb-0">{% trans "No hay avisos por el momento." %}</div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+.hover-shadow { transition: transform .12s, box-shadow .12s; }
+.hover-shadow:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  const input = document.getElementById('buscarAviso');
+  input && input.addEventListener('input', function(){
+    const q = this.value.trim().toLowerCase();
+    document.querySelectorAll('.aviso-item').forEach(function(card){
+      const title = card.querySelector('.card-title').textContent.toLowerCase();
+      card.style.display = title.includes(q) ? '' : 'none';
+    });
+  });
+});
+</script>
+{% endblock %}

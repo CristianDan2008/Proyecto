@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Gestión de Colaboradores" %} | SEMARTEC{% endblock %}
+
+{% block content %}
+<div class="container my-5 section-title1">
+  <div class="d-flex justify-content-between align-items-center mb-5">
+    <div>
+      <h1 class="fw-bold mb-2">{% trans "Gestión de Colaboradores" %}</h1>
+      <p class="text-muted">{% blocktrans %}Total de colaboradores: {{ total_colaboradores }}{% endblocktrans %}</p>
+    </div>
+  </div>
+
+  <!-- Botón crear -->
+  <div class="row g-3 mb-5">
+    <div class="col-md-6">
+      <a href="{% url 'colaborador-crear' %}" class="btn btn-primary w-100 py-3">
+        <i class="fa-solid fa-plus"></i> {% trans "Crear Nuevo Colaborador" %}
+      </a>
+    </div>
+    <div class="col-md-6">
+      <a href="{% url 'inicio-admin' %}" class="btn btn-outline-primary w-100 py-3">
+        <i class="fa-solid fa-arrow-left"></i> {% trans "Volver al Panel" %}
+      </a>
+    </div>
+  </div>
+
+  <!-- Tabla de colaboradores -->
+  <div class="card">
+    <div class="card-header bg-info text-white d-flex justify-content-between align-items-center">
+      <h5 class="mb-0">
+        <i class="fa-solid fa-list"></i> {% trans "Todos los Colaboradores" %}
+      </h5>
+      <span class="badge bg-light text-info badge-theme" data-dark="bg-dark text-light" data-light="bg-light text-info">{{ colaboradores|length }}</span>
+    </div>
+    <div class="card-body p-0">
+      {% if colaboradores %}
+      <div class="table-responsive">
+        <table class="table table-hover mb-0" id="tablaColaboradores">
+          <thead>
+            <tr>
+              <th>{% trans "Foto" %}</th>
+              <th>{% trans "Nombre" %}</th>
+              <th>{% trans "Cargo/Descripción" %}</th>
+              <th>{% trans "Acciones" %}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for c in colaboradores %}
+            <tr>
+              <td>
+                {% if c.fotografia %}
+                  <img src="{{ c.fotografia.url }}" alt="{{ c.nombre }}" width="50" height="50" class="img-thumbnail" style="border-radius: 50%;">
+                {% else %}
+                  <i class="fa-solid fa-user fa-2x text-muted"></i>
+                {% endif %}
+              </td>
+              <td>
+                <strong>{{ c.nombre }}</strong>
+              </td>
+              <td>
+                <small>{{ c.descripcion|truncatechars:60 }}</small>
+              </td>
+              <td>
+                <a href="{% url 'colaborador-editar' c.pk %}" class="btn btn-sm btn-warning">
+                  <i class="fa-solid fa-edit"></i>
+                </a>
+                <a href="{% url 'colaborador-eliminar' c.pk %}" class="btn btn-sm btn-danger">
+                  <i class="fa-solid fa-trash"></i>
+                </a>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% else %}
+      <div class="alert alert-info m-0">
+        <i class="fa-solid fa-info-circle"></i> {% trans "No hay colaboradores registrados aún." %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+</div>
+{% endblock %}

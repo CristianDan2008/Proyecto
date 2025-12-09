@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Gestión de Noticias" %} | SEMARTEC{% endblock %}
+
+{% block content %}
+<div class="container my-5 section-title1">
+  <h2 class="fw-bold mb-4">{% trans "Gestión de Noticias" %}</h2>
+
+  <div class="row g-3 mb-5">
+    <div class="col-md-6">
+      <a href="{% url 'noticia-crear' %}" class="btn btn-primary w-100 py-3">
+        <i class="fa-solid fa-plus"></i> {% trans "Crear Nueva Noticia" %}
+      </a>
+    </div>
+    <div class="col-md-6">
+      <a href="{% url 'inicio-admin' %}" class="btn btn-outline-primary w-100 py-3">
+        <i class="fa-solid fa-arrow-left"></i> {% trans "Volver al Panel" %}
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header bg-success text-white">
+      <h5 class="mb-0">{% blocktrans %}Total: <span class="badge bg-light text-success badge-theme" data-dark="bg-dark text-light" data-light="bg-light text-success">{{ noticias|length }}</span> noticias{% endblocktrans %}</h5>
+    </div>
+    <div class="card-body p-0">
+      {% if noticias %}
+      <div class="table-responsive">
+        <table class="table table-hover mb-0" id="tablaNoticias">
+          <thead>
+            <tr>
+              <th>{% trans "Título" %}</th>
+              <th>{% trans "Descripción" %}</th>
+              <th>{% trans "Fecha" %}</th>
+              <th>{% trans "Acciones" %}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for n in noticias %}
+            <tr>
+              <td>
+                <strong>{{ n.titulo }}</strong>
+              </td>
+              <td>
+                <small>{{ n.descripcion|truncatechars:80 }}</small>
+              </td>
+              <td>
+                <small class="text-muted">{{ n.fecha_publicacion|date:"d/m/Y H:i" }}</small>
+              </td>
+              <td>
+                <a href="{% url 'noticia-editar' n.pk %}" class="btn btn-sm btn-warning">
+                  <i class="fa-solid fa-edit"></i>
+                </a>
+                <a href="{% url 'noticia-eliminar' n.pk %}" class="btn btn-sm btn-danger">
+                  <i class="fa-solid fa-trash"></i>
+                </a>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% else %}
+      <div class="alert alert-info m-0">
+        <i class="fa-solid fa-info-circle"></i> {% trans "No hay noticias registradas aún." %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+</div>
+{% endblock %}

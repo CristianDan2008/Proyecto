@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans "Inicio" %} | SEMARTEC{% endblock %}
+
+{% block content %}
+<!-- Contenido específico de la página -->
+    <!-- Section Title -->
+    <div class="section-title section-titleini">
+        <h2>{% trans "¿Qué somos?" %}</h2>
+    </div>
+
+    <!-- Obras Content -->
+    <div class="content-box">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card-custom">
+                    <h5 class="card-title-custom">{% trans "Misión" %}</h5>
+                    <p class="card-subtitle">{% trans "¿Cual es nuestra meta?" %}</p>
+                    <div class="user-info">
+                       
+                        <div>
+                            <div class="user-name">{% blocktrans %}Mejorar la calidad de la educación de niñas, 
+                                niños y jóvenes por medio de las tics y capacitación para cotribuir al desarrollo
+                            comunitario de la zona noroeste del Estado de México.{% endblocktrans %}</div>
+                            
+                        </div>
+                    </div>
+                    <img src="{% static "img/logo1.jpg" %}" class="card-image" alt="{% trans "Edificio" %}">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card-custom">
+                    <h5 class="card-title-custom">{% trans "Visión" %}</h5>
+                    <p class="card-subtitle">{% trans "Informe" %}</p>
+                    <div class="user-info">
+                        
+                        <div>
+                            <div class="user-name">{% blocktrans %}Ser una asociación civil consolidada, 
+                                empoderando a las comunidades con mejores oportunidades de desarrollo,
+                            logrando un mejro nivel educativo con el uso de herramientas tecnológicas{% endblocktrans %}</div>
+                           
+                        </div>
+                    </div>
+                    <img src="{% static "img/img2.jpg" %}" class="card-image" alt="{% trans "Construcción" %}">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card-custom">
+                    <h5 class="card-title-custom">{% trans "Valores" %}</h5>
+                    <p class="card-subtitle">{% trans "Expresión" %}</p>
+                    <div class="user-info">
+                     
+                        <div>
+                            <div class="user-name">{% blocktrans %}Demuestra valores de calidad educativa 
+                                y desarrollo comunitario, enfoncándose en empoderar a las
+                                comunidades a través del acceso a la tecnología y conectividad
+                                para mejorar la educación en zonas rurales e indígenas.{% endblocktrans %}</div>
+                            </div>
+                        </div>
+                        <img src="{% static "img/valores.jpg" %}" class="card-image" alt="{% trans "Valores" %}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section Title -->
+    <div class="section-title">
+        <h2>{% trans "Obras por realizar" %}</h2>
+    </div>
+
+    <!-- Orange Section -->
+    <div class="orange-section">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="white-card">
+                    <h5 class="card-title-custom">{% trans "Implementación de redes de comunicación e internet" %}</h5>
+                    <div class="user-info">
+                        <div class="user-avatar"></div>
+                        <div>
+                            <div class="user-name">{% trans "Llevar el internet y la comunicación a zonas rurales." %}</div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="white-card">
+                    <h5 class="card-title-custom">{% trans "Dar mantenimiento a nuestras obras" %}</h5>
+                    <div class="user-info">
+                        <div class="user-avatar"></div>
+                        <div>
+                            <div class="user-name">{% trans "Proporcionar actualizaciones y reposiciones de daños." %}</div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="white-card">
+                    <h5 class="card-title-custom">{% trans "Actualización de software" %}</h5>
+                    <div class="user-info">
+                        <div class="user-avatar"></div>
+                        <div>
+                            <div class="user-name">{% trans "Servicios de mejoras al sistema" %}</div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Goals Section -->
+    <div class="goals-section">
+        <h3 class="mb-4 fw-bold">{% trans "Metas a cumplir" %}</h3>
+        
+        <div class="goal-item">
+            <div class="goal-text flex-grow-1">
+                <h5>{% trans "Mejora de oportunidades" %}</h5>
+                <p>{% blocktrans %}¡La tecnologia es un paso hacia la grandesa! <br> Por eso queremos que llege a cada uno
+                de los niños en San José del Rincón, mejorando así su futuro{% endblocktrans %}</p>
+            </div>
+            <img src="{% static "img/oportunidades.jpg" %}" class="goal-image" alt="{% trans "Oportunidades" %}">
+        </div>
+
+        <div class="goal-item">
+            <div class="goal-text flex-grow-1">
+                <h5>{% trans "Acceso al maravilloso mundo de la tecnología" %}</h5>
+                <p>{% blocktrans %}¡Actualizando la vida en zona mazahua!<br>Implementar una educacion y cultura digital en jovenes y niños mazahuas{% endblocktrans %}</p>
+            </div>
+            <img src="{% static "img/mejora.webp" %}" class="goal-image" alt="{% trans "Mejora" %}">
+        </div>
+
+        <div class="goal-item">
+            <div class="goal-text flex-grow-1">
+                <h5>{% trans "Contribuciones" %}</h5>
+                <p>{% blocktrans %}¡Asegurar la educacion es asegurar el futuro!<br>Aporte en el crecimiento de los jovenes y niños para la construccion de un futuro{% endblocktrans %}</p>
+            </div>
+            <img src="{% static "img/educacion.webp" %}" class="goal-image" alt="{% trans "Contribuciones" %}">
+        </div>
+    </div> 
+
+{% endblock %}

@@ -1,0 +1,446 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="es">
+  <link rel="icon" type="image/x-icon" href="{% static "img/logo.jpg" %}">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}SEMARTEC - {% trans "Portal de avisos" %}{% endblock %}</title>
+
+    <!--LINK de BOOTSTRAP-->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+
+    <!-- ENLACE DE FONT AWESOME -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- ENLACE DE CSS -->
+
+    <link rel="stylesheet" href="{% static 'main.css' %}" />
+    {% block head_extra %} {%endblock%}
+    <style>
+      /* Asegurar que el tema oscuro se aplique a todo Bootstrap */
+      body.dark-mode {
+        background-color: #121212 !important;
+        color: #e9ecef !important;
+      }
+      
+      body.dark-mode .dropdown-menu {
+        background-color: #1e1e1e !important;
+        color: #e9ecef !important;
+      }
+      
+      body.dark-mode .dropdown-item {
+        color: #e9ecef !important;
+      }
+      
+      body.dark-mode .dropdown-item:hover,
+      body.dark-mode .dropdown-item:focus {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        color: #e9ecef !important;
+      }
+      
+      body.dark-mode .dropdown-divider {
+        border-color: #333333 !important;
+      }
+      
+      body.dark-mode h1,
+      body.dark-mode h2,
+      body.dark-mode h3,
+      body.dark-mode h4,
+      body.dark-mode h5,
+      body.dark-mode h6,
+      body.dark-mode p,
+      body.dark-mode span,
+      body.dark-mode a,
+      body.dark-mode label {
+        color: #e9ecef !important;
+      }
+      
+      body.dark-mode .card {
+        background-color: #1e1e1e !important;
+        color: #e9ecef !important;
+        border-color: #333333 !important;
+      }
+      
+      body.dark-mode .alert {
+        background-color: #1e1e1e !important;
+        color: #e9ecef !important;
+        border-color: #333333 !important;
+      }
+      
+      body.dark-mode .form-control,
+      body.dark-mode .form-select,
+      body.dark-mode textarea {
+        background-color: #2a2a2a !important;
+        color: #e9ecef !important;
+        border-color: #333333 !important;
+      }
+      
+      body.dark-mode .form-control:focus,
+      body.dark-mode .form-select:focus,
+      body.dark-mode textarea:focus {
+        background-color: #2a2a2a !important;
+        color: #e9ecef !important;
+        border-color: #008080 !important;
+        box-shadow: 0 0 0 0.25rem rgba(0, 128, 128, 0.25) !important;
+      }
+      
+      body.dark-mode .btn-primary {
+        background-color: #008080 !important;
+        border-color: #008080 !important;
+      }
+      
+      body.dark-mode .btn-primary:hover {
+        background-color: #006666 !important;
+        border-color: #006666 !important;
+      }
+      
+      body.dark-mode .table {
+        color: #e9ecef !important;
+        border-color: #333333 !important;
+      }
+      
+      body.dark-mode .table > thead > tr > th {
+        background-color: #2a2a2a !important;
+        color: #e9ecef !important;
+        border-color: #333333 !important;
+      }
+      
+      body.dark-mode .table > tbody > tr > td {
+        border-color: #333333 !important;
+      }
+      
+      body.dark-mode .container {
+        color: #e9ecef !important;
+      }
+
+      /* ✅ Estilos para botones de idioma */
+      .dropdown-item form {
+        margin: 0;
+        padding: 0;
+      }
+
+      .dropdown-item button {
+        background: none;
+        border: none;
+        width: 100%;
+        text-align: left;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        color: #000;
+      }
+
+      .dropdown-item button:hover {
+        background-color: #e9ecef;
+      }
+
+      body.dark-mode .dropdown-item button {
+        color: #e9ecef !important;
+      }
+
+      body.dark-mode .dropdown-item button:hover {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+      }
+
+      .dropdown-item.active {
+        background-color: #008080 !important;
+        color: white !important;
+      }
+
+      .dropdown-item.active button {
+        color: white !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <nav class="navbar navbar-expand-md modern-navbar fixed-top">
+        <div class="container">
+          <!-- Logo -->
+          <a
+            id="logo_nombre"
+            class="navbar-brand shine"
+            href="{% url 'inicio' %}"
+          >
+            <img src="{% static "img/logo.jpg" %}" id="logo1" alt="SEMARTEC
+            Logo"> SEMARTEC
+          </a>
+
+          <!-- Botón Hamburguesa -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNav"
+            aria-controls="mainNav"
+            aria-expanded="false"
+            aria-label="{% trans 'Alternar navegación' %}"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Menú de Navegación -->
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto gap-md-2">
+              <li class="nav-item">
+                <a class="nav-link modern-nav-link" href="{% url 'inicio' %}">
+                  <i class="fa-solid fa-house"></i>
+                  <span>{% trans "Inicio" %}</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link modern-nav-link" href="{% url 'avisos' %}">
+                  <i class="fa-solid fa-bullhorn"></i>
+                  <span>{% trans "Avisos" %}</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link modern-nav-link" href="{% url 'noticias' %}">
+                  <i class="fa-solid fa-newspaper"></i>
+                  <span>{% trans "Noticias" %}</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link modern-nav-link"
+                  href="{% url 'colaboradores' %}"
+                >
+                  <i class="fa-solid fa-users"></i>
+                  <span>{% trans "Colaboradores" %}</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link modern-nav-link"
+                  href="{% url 'contactos-crear' %}"
+                >
+                  <i class="fa-solid fa-mobile-screen-button"></i>
+                  <span>{% trans "Contacto" %}</span>
+                </a>
+              </li>
+
+              <!-- ✅ BOTONES DE IDIOMA MEJORADOS -->
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link modern-nav-link dropdown-toggle"
+                  href="#"
+                  id="languageDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="fa-solid fa-globe"></i>
+                  <span id="currentLanguage">
+                    {% if LANGUAGE_CODE == 'es' %}ES{% else %}EN{% endif %}
+                  </span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                  <li>
+                    <form action="{% url 'set_language' %}" method="post" class="w-100">
+                      {% csrf_token %}
+                      <input type="hidden" name="next" value="{{ request.path }}">
+                      <button type="submit" name="language" value="es" class="dropdown-item {% if LANGUAGE_CODE == 'es' %}active{% endif %}">
+                        <i class="fa-solid fa-check"></i> Español
+                      </button>
+                    </form>
+                  </li>
+                  <li>
+                    <form action="{% url 'set_language' %}" method="post" class="w-100">
+                      {% csrf_token %}
+                      <input type="hidden" name="next" value="{{ request.path }}">
+                      <button type="submit" name="language" value="en" class="dropdown-item {% if LANGUAGE_CODE == 'en' %}active{% endif %}">
+                        <i class="fa-solid fa-check"></i> English
+                      </button>
+                    </form>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- ✅ BOTÓN DE CONFIGURACIÓN (temas, etc) -->
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link modern-nav-link dropdown-toggle"
+                  href="#"
+                  id="configDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="fa-solid fa-sliders"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="configDropdown">
+                  <!-- Tema -->
+                  <li>
+                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="#" id="themeToggle">
+                      <span id="themeLabel"><i class="fa-solid fa-moon"></i> {% trans "Tema oscuro" %}</span>
+                    </a>
+                  </li>
+                  <li><hr class="dropdown-divider"></li>
+                  <!-- Login/Usuario -->
+                  {% if user.is_authenticated %}
+                  <li><a class="dropdown-item" href="{% url 'logout' %}"><i class="fa-solid fa-sign-out-alt"></i> {% trans "Cerrar sesión" %}</a></li>
+                  {% if user.is_staff %}
+                  <li><a class="dropdown-item" href="{% url 'inicio-admin' %}"><i class="fa-solid fa-tachometer-alt"></i> {% trans "Panel Admin" %}</a></li>
+                  {% endif %}
+                  {% else %}
+                  <li><a class="dropdown-item" href="{% url 'login' %}"><i class="fa-solid fa-sign-in-alt"></i> {% trans "Iniciar sesión" %}</a></li>
+                  {% endif %}
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- contenido principal -->
+
+    <main class="site-content py-4">
+      <div class="container">
+        {% block content %} 
+        {% comment %} contenido en bloques {% endcomment %}
+        {% endblock %}
+      </div>
+      {% if messages %}
+      <div class="container mt-3">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} mb-3">{{ message }}</div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </main>
+
+    <!-- footer -->
+
+    <footer class="site-footer">
+      <div class="container py-4 text-center">
+        <p class="mb-2">
+          &copy; {% now "Y" %} SEMARTEC. {% trans "Todos los derechos reservados." %}
+        </p>
+        <ul
+          class="social-links list-unstyled d-flex justify-content-center gap-3 m-0"
+        >
+          <li>
+            <a href="#" rel="noopener"
+              ><i class="fa-brands fa-square-facebook"></i> Facebook</a
+            >
+          </li>
+          <li>
+            <a href="#" rel="noopener"
+              ><i class="fa-brands fa-square-x-twitter"></i> X-Twitter</a
+            >
+          </li>
+          <li>
+            <a href="#" rel="noopener"
+              ><i class="fa-brands fa-square-instagram"></i> Instagram</a
+            >
+          </li>
+          <li>
+            <a href="#" rel="noopener"
+              ><i class="fa-brands fa-youtube"></i> YouTube</a
+            >
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- SCRIPTS DE BOOTSTRAP -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    {% block scripts %}{% endblock %}
+
+    <script>
+      // ===== GESTOR DE TEMA (Claro/Oscuro) =====
+      const themeToggle = document.getElementById('themeToggle');
+      const html = document.documentElement;
+      const body = document.body;
+
+      // Cargar preferencia guardada o usar preferencia del sistema
+      function initTheme() {
+        const savedTheme = localStorage.getItem('theme') || 
+                          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        
+        if (savedTheme === 'dark') {
+          body.classList.add('dark-mode');
+          updateThemeLabel();
+        }
+      }
+
+      // Actualizar etiqueta del botón de tema
+      function updateThemeLabel() {
+        const isDark = body.classList.contains('dark-mode');
+        const label = document.getElementById('themeLabel');
+        if (isDark) {
+          label.innerHTML = '<i class="fa-solid fa-sun"></i> {% trans "Tema claro" %}';
+        } else {
+          label.innerHTML = '<i class="fa-solid fa-moon"></i> {% trans "Tema oscuro" %}';
+        }
+      }
+
+      // Toggle del tema con transición suave
+      themeToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        body.classList.toggle('dark-mode');
+        const isDark = body.classList.contains('dark-mode');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        updateThemeLabel();
+      });
+
+      // Inicializar al cargar la página
+      document.addEventListener('DOMContentLoaded', function() {
+        initTheme();
+        updateTableTheme();
+      });
+
+      // ===== GESTOR DE TEMA PARA TABLAS Y BADGES =====
+      function updateTableTheme() {
+        const isDark = body.classList.contains('dark-mode');
+        const tables = document.querySelectorAll('table');
+        const badges = document.querySelectorAll('.badge-theme');
+        
+        tables.forEach(table => {
+          if (isDark) {
+            table.classList.add('table-dark');
+          } else {
+            table.classList.remove('table-dark');
+          }
+        });
+
+        badges.forEach(badge => {
+          if (isDark) {
+            const darkClasses = badge.getAttribute('data-dark');
+            const lightClasses = badge.getAttribute('data-light');
+            badge.className = `badge ${darkClasses}`;
+          } else {
+            const lightClasses = badge.getAttribute('data-light');
+            badge.className = `badge ${lightClasses}`;
+          }
+        });
+      }
+
+      // Actualizar tema de tablas y badges cuando se cambia el tema
+      const originalThemeToggle = themeToggle.addEventListener('click', function(e) {
+        setTimeout(updateTableTheme, 10);
+      });
+    </script>
+    
+  </body>
+</html>
