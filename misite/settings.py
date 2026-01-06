@@ -37,7 +37,7 @@ SECRET_KEY = env('SECRET_KEY', default=env('my_secret_key', default='replace-me'
 # SECURITY WARNING: don't run with debug turned on in production!
 # Read DEBUG as a boolean; the .env file uses DEBUG=TRUE
 DEBUG = env.bool('DEBUG', default=False)
-ALLOWED_HOSTS = [semartececytem.onrender.com]
+ALLOWED_HOSTS = ["semartececytem.onrender.com"]
 
 
 # Application definition
