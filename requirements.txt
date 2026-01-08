@@ -14,7 +14,8 @@ sqlparse==0.5.4
 tzdata==2025.2
 gunicorn
 whitenoise
-dj-database-url ==2.4.0
+dj-database-url
+
 
 
 
