@@ -1,20 +1,21 @@
-﻿asgiref==3.11.0
-charset-normalizer==3.4.4
-Django==5.2.8
-django-environ==0.12.0
-ffs==0.0.8.2
-Jinja2==3.1.6
-letter==0.5
-MarkupSafe==3.0.3
-pillow==12.0.0
-psycopg2-binary==2.9.11
-reportlab==4.4.5
-six==1.17.0
-sqlparse==0.5.4
-tzdata==2025.2
+﻿asgiref
+charset-normalizer
+Django
+django-environ
+ffs
+Jinja2
+letter
+MarkupSafe
+pillow
+psycopg2-binary
+reportlab
+six
+sqlparse
+tzdata
 gunicorn
 whitenoise
 dj-database-url
+
 
 
 
