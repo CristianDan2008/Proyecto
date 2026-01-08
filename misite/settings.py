@@ -10,6 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+#librerias necesarias 
+
+import dj_database_url # Añade este import arriba
 import os
 from pathlib import Path
 
@@ -88,16 +91,14 @@ WSGI_APPLICATION = 'misite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+#Base de datos por medio de render.
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        # Use the POSTGRESQL_* variables defined in misite/environ.env
-        'NAME': env('POSTGRESQL_NAME'),
-        'USER': env('POSTGRESQL_USER'),
-        'PASSWORD': env('POSTGRESQL_PASS'),
-        'HOST': env('POSTGRESQL_HOST'),
-        'PORT': env('POSTGRESQL_PORT'),
-    }
+    'default': dj_database_url.config(
+        # Aquí Render inyectará automáticamente la URL de tu base de datos
+        default='sqlite:///db.sqlite3', 
+        conn_max_age=600
+    )
 }
 
 
